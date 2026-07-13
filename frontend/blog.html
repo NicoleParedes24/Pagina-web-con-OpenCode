@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog de Notas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+
+  <header class="header header-blog">
+    <div class="header-content">
+      <h1 class="header-title">
+        <span class="header-icon">&#128221;</span>
+        Blog de Notas
+      </h1>
+      <p class="header-subtitle">Escribe y organiza tus ideas</p>
+      <nav class="nav-links">
+        <a href="/" class="nav-link">&#128203; Actividades</a>
+        <a href="/blog.html" class="nav-link active">&#128221; Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Formulario de nota -->
+    <section class="panel form-panel">
+      <h2 class="panel-title" id="form-title">Nueva Nota</h2>
+      <form id="nota-form" class="nota-form" novalidate>
+        <input type="hidden" id="nota-id">
+
+        <div class="form-group">
+          <label for="nota-titulo">Titulo <span class="required">*</span></label>
+          <input type="text" id="nota-titulo" placeholder="Titulo de tu nota..." required>
+          <span class="error-msg" id="error-titulo"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="nota-contenido">Contenido <span class="required">*</span></label>
+          <textarea id="nota-contenido" rows="8" placeholder="Escribe tu nota aqui..." required></textarea>
+          <span class="error-msg" id="error-contenido"></span>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn btn-primary" id="btn-guardar">Publicar</button>
+          <button type="button" class="btn btn-secondary" id="btn-cancelar" style="display:none;">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Lista de notas -->
+    <section class="panel list-panel">
+      <div class="list-header">
+        <h2 class="panel-title">Mis Notas</h2>
+        <span class="nota-count" id="nota-count">0 notas</span>
+      </div>
+
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon">&#128221;</div>
+        <p>No hay notas aun. Escribe la primera!</p>
+      </div>
+
+      <div class="notas-list" id="notas-list"></div>
+    </section>
+
+  </main>
+
+  <!-- Modal de nota -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal modal-nota">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <h3 class="modal-title" id="modal-title"></h3>
+      <div class="modal-body">
+        <div class="modal-fecha" id="modal-fecha"></div>
+        <div class="modal-contenido" id="modal-contenido"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/blog.js"></script>
+</body>
+</html>

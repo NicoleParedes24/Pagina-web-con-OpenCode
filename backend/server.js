@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const actividadesRoutes = require('./routes/actividades');
+const notasRoutes = require('./routes/notas');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,6 +15,7 @@ app.use(express.static('../frontend'));
 
 // Rutas de la API
 app.use('/actividades', actividadesRoutes);
+app.use('/notas', notasRoutes);
 
 // Ruta raíz — servir el frontend
 app.get('/', (req, res) => {

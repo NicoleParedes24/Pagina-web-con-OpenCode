@@ -67,6 +67,35 @@ body {
   margin-top: 0.25rem;
 }
 
+/* ---------- Nav Links ---------- */
+.nav-links {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.nav-link:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.15);
+}
+
+.nav-link.active {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.5);
+}
+
 /* ---------- Container ---------- */
 .container {
   max-width: 1200px;
